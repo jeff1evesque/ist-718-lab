@@ -116,7 +116,7 @@ def accuracy(clf, test, y_pred):
 
     return predicted_labels
 
-def visualize(lbl, test, predicted_labels):
+def viz_svm(lbl, test, predicted_labels):
     '''
 
     Visualize predictions against original values.
