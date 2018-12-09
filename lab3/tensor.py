@@ -18,7 +18,8 @@ def visualize(instances, fashion_mnist, labels):
 
     '''
 
-    for instance in instances:
+    plt.figure(figsize=(10,10))
+    for i, instance in enumerate(instances):
         # sample: get 28x28 image
         sample = fashion_mnist.train.images[instance].reshape(28,28)
 
@@ -26,12 +27,15 @@ def visualize(instances, fashion_mnist, labels):
         sample_label = np.where(fashion_mnist.train.labels[instance] == 1)[0][0]
 
         # plot sample
-        print('y = {index} ({label})'.format(
-            index=sample_label,
-            label=labels[sample_label])
-        )
+        plt.subplot(5,5,i+1)
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
         plt.imshow(sample, cmap='Greys')
-        plt.show()
+        plt.xlabel('index = {index} ({label})'.format(
+            index=sample_label,
+            label=labels[sample_label]
+        ))
 
 def create_placeholders(n_x, n_y):
     '''
