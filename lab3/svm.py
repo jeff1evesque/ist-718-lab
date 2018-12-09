@@ -43,7 +43,7 @@ def load_mnist(path, kind='train'):
 
     return images, labels
 
-def svm(train):
+def fit(train):
     '''
 
     Generate svm model.
@@ -78,7 +78,7 @@ def accuracy(clf, test, y_pred):
 
     accuracy_classifier = clf.score(test[0], test[1])
     accuracy_prediction = accuracy_score(test[1], y_pred)
-    confusion = confusion_matrix(test[1],y_pred)
+    confusion = confusion_matrix(test[1], y_pred)
 
     print('\nSVM Trained Classifier Accuracy: {}'.format(accuracy_classifier))
     print('Predicted Values: {}'.format(y_pred))
