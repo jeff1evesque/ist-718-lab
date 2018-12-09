@@ -115,23 +115,3 @@ def accuracy(clf, test, y_pred):
     plt.show()
 
     return predicted_labels
-
-def viz_svm(lbl, test, predicted_labels):
-    '''
-
-    Visualize predictions against original values.
-
-    '''
-
-    arr = lbls.values()
-
-    # original vs predicted labels: test images
-    a = np.random.randint(1,40,15)
-    for i in a:
-        two_d = (np.reshape(test[i], (28, 28)) * 255).astype(np.uint8)
-        plt.title('Original Label: {0}  Predicted Label: {1}'.format(
-            arr[test[i]],
-            arr[predicted_labels[i]]
-        ))
-        plt.imshow(two_d, interpolation='nearest')
-        plt.show()
