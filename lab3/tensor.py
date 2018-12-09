@@ -11,7 +11,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from tensorflow.python.framework import ops
 
-def visualize(instances, fashion_mnist, labels):
+def viz_tensor(instances, fashion_mnist, labels):
     '''
 
     Visualize corresponding elements.
@@ -312,5 +312,3 @@ def model(
             X: test.images.T,
             Y: test.labels.T
         }))
-        
-        return parameters
