@@ -94,6 +94,11 @@ def accuracy(clf, test, y_pred):
     plt.show()
 
 def viz_svm(test, labels):
+    '''
+
+    Visualize fashion item, with predicted value.
+
+    '''
     arr = labels.values()
     a = np.random.randint(1, 40, 15)
 
