@@ -193,7 +193,6 @@ def model(
     num_epochs=16,
     minibatch_size=32,
     print_cost=True,
-    graph_filename='costs',
     hidden_1=128,
     hidden_2=128,
     n_input=784,
@@ -291,7 +290,6 @@ def model(
         plt.ylabel('cost')
         plt.xlabel('iterations')
         plt.title('learning rate = {rate}'.format(rate=learning_rate))
-        plt.savefig(graph_filename, dpi=300)
         plt.show()
         
         # save parameters
