@@ -312,5 +312,3 @@ def model(
             X: test.images.T,
             Y: test.labels.T
         }))
-        
-        return parameters
