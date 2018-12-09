@@ -87,31 +87,29 @@ def accuracy(clf, test, y_pred):
 
     # confusion matrix plot
     plt.matshow(confusion)
-    plt.title('Confusion Matrix')
+    plt.title('Confusion Matrix for Test Data')
     plt.colorbar()
     plt.ylabel('Actual')
     plt.xlabel('Predicted')
     plt.show()
 
-    # predicting test images
-    predicted_labels = clf.predict(test[0])
+def viz_svm(test, labels):
+    '''
 
-    # classifier accuracy: using test data
-    accuracy_test = accuracy_score(test[1], predicted_labels)
+    Visualize fashion item, with predicted value.
 
-    # confusion matrix
-    confusion_test = confusion_matrix(test[1], predicted_labels)
+    '''
+    arr = labels.values()
+    a = np.random.randint(1, 40, 15)
 
-    print('Predicted Labels for Test Images: {}'.format(predicted_labels))
-    print('Accuracy of Classifier on Test Images: '.format(accuracy_test))
-    print('Confusion Matrix for Test Data: \n'.format(confusion_test))
-
-    # confusion matrix: using test data
-    plt.matshow(confusion_test)
-    plt.title('Confusion Matrix for Test Data')
-    plt.colorbar()
-    plt.ylabel('True label')
-    plt.xlabel('Predicted label')
-    plt.show()
-
-    return predicted_labels
+    for i in a:
+        two_d = (np.reshape(test[0][i], (28, 28)) * 255).astype(np.uint8)
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
+        plt.imshow(two_d, interpolation='nearest')
+        plt.xlabel('Actual ({actual}), Predicted ({predicted})'.format(
+            actual=test[1][i],
+            predicted=predicted_labels[i]
+        ))
+        plt.show()
